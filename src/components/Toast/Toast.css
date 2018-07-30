@@ -1,0 +1,52 @@
+.toast {
+	position: fixed;
+	left: 30px;
+	padding: 0 15px;
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	pointer-events: none;
+	background-color: #607D8B;
+	color: #fff;
+	animation: show 3000ms;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+		bottom: -65px;
+	}
+
+	20%, 80% {
+		opacity: 1;
+		bottom: 30px;
+	}
+
+	100% {
+		opacity: 0;
+		bottom: -65px;
+	}
+}
+
+@media screen and (max-width: 40em) {
+	@keyframes show {
+		0% {
+			opacity: 0;	
+			bottom: -41px;
+		}
+
+		20%, 80% {
+			opacity: 1;
+			bottom: 0;
+		}
+
+		100% {
+			opacity: 1;
+			bottom: -41px;
+		}
+	}
+
+	.toast {
+		left: 0;
+		width: 100%;
+	}
+}

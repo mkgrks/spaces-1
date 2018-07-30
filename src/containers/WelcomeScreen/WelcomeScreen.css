@@ -1,0 +1,13 @@
+h2, h3 {
+	color: #00408E;
+	opacity: 0.8;
+	font-weight: 400;
+}
+
+@media screen and (max-width: 40em) {
+    h2 {
+    }
+		
+		h3 {
+		}
+}

@@ -1,0 +1,53 @@
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+  height: auto;
+  border-radius: 3px 3px 0 0;
+}
+
+.card {
+	margin-bottom: 2em;	
+  transition: box-shadow 240ms;
+  border-radius: 3px;
+}
+
+.card a {
+	color: rgba(0,0,0,0.7);
+    text-decoration: none;
+    width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+}
+
+.card-content {
+    padding: 1.4em;
+}
+
+h2 {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: bold;
+}
+
+p {
+	font-size: 80%;
+}
+
+/* Flexbox stuff */
+@media screen and (min-width: 40em) {
+    .card {
+        display: flex;
+        flex: 0 1 calc(50% - .5em);
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .card {
+        flex: 0 1 calc(25% - 1em);
+        margin-bottom: 2em;
+    }
+}
