@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
-import { Header, Board, PageLoader, Toast } from "../../components";
+import { Header, Board, PostInput, PageLoader, Toast, Modal } from "../../components";
+import { Fab } from "../../elements";
 import WelcomeScreen from "../WelcomeScreen/WelcomeScreen";
 
 import styles from "./App.css";
@@ -27,10 +28,15 @@ class App extends Component {
 					<Header />
 					<div className={styles.container}>
 						<div className={`${styles.centered} ${false ? styles.centeredPadded : ""}`}>
-							{true ? <Board /> : <WelcomeScreen />}
+							{/* <div className={styles.space}>
+								<PostInput />
+							</div> */}
+							<Board />
 						</div>
 					</div>
 				</div>
+				<Fab />
+				<Modal />
 				<Toast />
 			</Fragment>
 		);

@@ -37,7 +37,9 @@ class Header extends Component {
 
 		return (
 			<header className={headerClasses}>
-				<span className={styles.logo}>Spaces</span>
+				<div className={styles.logo}>
+					Spaces<code className={styles.version}>alpha</code>
+				</div>
 				<AuthComponent />
 			</header>
 		);

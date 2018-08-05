@@ -1,17 +1,24 @@
-
-@media screen and (min-width: 40em) {
-	.cards {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			margin-top: -1em;
-	}
-
+.container {
+  display: grid;
+  grid-auto-rows: 50px;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 }
 
-@media screen and (min-width: 60em) {
-	.cards {
-			margin-top: inherit;
-	}
-	
+@media (max-width: 1280px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
 }

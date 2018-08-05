@@ -1,6 +1,6 @@
 import React, { Component, createRef } from "react";
-import { GoogleLogout } from "react-google-login";
 import styles from "./UserBubble.css";
+import Avatar from "../../Avatar/Avatar";
 
 class UserBubble extends Component {
 	constructor(props) {
@@ -31,20 +31,17 @@ class UserBubble extends Component {
 				className={styles.userBubble}
 			>
 				<div className={styles.basicInfo}>
-					<div className={styles.avatar} style={{ backgroundImage: `url(${avatar})` }} />
+					<Avatar size="32px" />
 					<div className={styles.info}>
 						<b className={styles.truncate}>{fullName}</b>
 						<span className={styles.truncate}>{email}</span>
 					</div>
 				</div>
 				<div className={styles.actions}>
-					<GoogleLogout
-						className={[styles.button, styles.signout].join(" ")}
-						buttonText="Sign out"
-						tag="div"
-						type=""
-						onLogoutSuccess={handleLogout}
-					/>
+					<div className={styles.button}>Feedback</div>
+					<div className={[styles.button, styles.signout].join(" ")} onClick={handleLogout}>
+						Sign out
+					</div>
 				</div>
 			</div>
 		);

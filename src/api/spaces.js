@@ -1,17 +1,38 @@
-//  id | full_name | first_name | email | avatar
-
 export const auth = obj => {
-	const searchParams = `${encodeURIComponent("token")}=${encodeURIComponent(obj.Zi.id_token)}`;
+	const params = `${encodeURIComponent("token")}=${encodeURIComponent(obj.Zi.id_token)}`;
 
 	return fetch(`/auth/google`, {
 		method: "POST",
+		credentials: "same-origin",
 		headers: {
 			"Content-Type": "application/x-www-form-urlencoded",
 		},
-		body: searchParams,
-	}).then(r => r.json());
+		body: params,
+	}).then(res => res.json());
 };
 
-export const fetchUserSpaces = owner => {
-	return fetch(`/api/getSpaces?owner=${owner}`).then(r => r.json());
+export const fetchUserSpaces = () => {
+	return fetch(`/api/getSpaces`, {
+		credentials: "same-origin",
+	}).then(res => res.json());
+};
+
+export const handshake = () => {
+	return fetch(`/api/handshake`, {
+		credentials: "same-origin",
+	}).then(res => res.json());
+};
+
+export const logout = () => {
+	return fetch("/auth/logout", {
+		method: "POST",
+		credentials: "same-origin",
+	}).then(res => res.json());
+};
+
+export const scrape = url => {
+	// debugger; // eslint-disable-line
+	return fetch(`/api/scrape?url=${url}`, {
+		credentials: "same-origin",
+	}).then(res => res.json());
 };

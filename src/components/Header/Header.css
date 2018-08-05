@@ -9,6 +9,18 @@
 	transition: box-shadow 240ms;
 	width: 100%;
 	z-index: 1;
+	animation: slide 340ms 1;
+	animation-timing-function: ease-out;
+
+}
+
+.version {
+	font-size: 10px;
+	padding: 3px;
+	top: 10px;
+	position: relative;
+	color: #7aa1ef;
+	left: -35px;
 }
 
 .shadow {
@@ -17,9 +29,19 @@
 
 .logo {
 	font-size: 23px;
-	padding: 0 20px;
+	padding-left: 20px;
+	width: 75px;
 	font-weight: 400;
 	color: rgba(0,0,0,0.7);
-	pointer-events: none;
+	cursor: pointer;
+	transition-duration: 120ms;
 }
 
+.logo:active {
+	transform: scale(0.95);
+}
+
+@keyframes slide {
+	from { top: -64px }
+  to 	{ top: 0 }
+}

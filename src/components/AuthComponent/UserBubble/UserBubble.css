@@ -1,22 +1,26 @@
+{
+	@value shadows: "../../../css/shadows.css";
+	@value heavy from shadows;
+}
+
 .user-bubble {
-	animation: name duration timing-function delay iteration-count direction fill-mode;
 	position: absolute;
-	background-color: #fff;
-	width: 280px;
+	background-color: primary;
 	top: 60px;
 	right: 20px;
-	height: 130px;
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+  box-shadow: heavy;
 	display: flex;
+	background-color: #fff;
 	flex-direction: column;
 	justify-content: space-between;	
 	animation: show 240ms 1;
 	outline: none;
+	border-radius: 4px;
+	width: 280px;
 }
 
 .basic-info {
 	display: flex;
-  justify-content: space-around;
 	padding: 20px;
 }
 
@@ -24,28 +28,22 @@
 	display: flex;
 	flex-direction: column;
 	pointer-events: none;
+	width: 100%;
+	padding-left: 20px;
 }
 
 .actions {
 	display: flex;
 	justify-content: space-around;
-}
-
-.avatar {
-	border-radius: 50%;
-	width: 34px;
-	height: 34px;
-	background-size: 34px 34px;	
-	background-repeat: no-repeat;
-	background-position: center;
+	flex-direction: column
 }
 
 .button {
 	cursor: pointer;
 	transition: 240ms;
-	width: 100%;
 	height: 100%;	
 	padding: 15px 20px;
+	border-radius: 0 0 4px 4px;
 }
 
 .button:hover {
@@ -54,6 +52,10 @@
 
 .button:active {
 	background-color: #DADADA;
+}
+
+.signout:hover {	
+	background-color: #fff3f6;
 }
 
 .signout:active {

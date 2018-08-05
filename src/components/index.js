@@ -5,5 +5,6 @@ import PageLoader from "./PageLoader/PageLoader";
 import Toast from "./Toast/Toast";
 import Avatar from "./Avatar/Avatar";
 import Board from "./Board/Board";
+import PostInput from "./PostInput/PostInput";
 
-export { Board, Avatar, Toast, Header, Card, Modal, PageLoader };
+export { PostInput, Board, Avatar, Toast, Header, Card, Modal, PageLoader };

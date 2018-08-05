@@ -1,4 +1,4 @@
-import { USER_FETCHED, USER_LOGOUT, NEW_USER } from "../actions";
+import { USER_FETCHED, NEW_USER } from "../actions";
 
 const userReducer = (state = {}, action) => {
 	const { user, type } = action;

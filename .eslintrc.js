@@ -43,6 +43,7 @@ module.exports = {
     "import/no-dynamic-require": 0,
     "react/jsx-no-bind": 0,
     "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/label-has-for": 0,
     "import/prefer-default-export": 1,

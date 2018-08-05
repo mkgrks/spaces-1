@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 import styles from "./PageLoader.css";
-// should this be on connect? hhm later
 
 const PageLoader = props => {
 	const { barHeight, barWidth, bgColor, barColor, loading } = props;

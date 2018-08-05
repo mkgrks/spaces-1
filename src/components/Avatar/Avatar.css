@@ -1,22 +1,29 @@
 .avatar {
 	border-radius: 50%;
-	cursor: pointer;
-	align-self: center;
-	margin: 20px;
+	left: -20px;
+}
+
+.clickable {
 	transition: 240ms;
-	width: 100px;
-	height: 100px;
+	cursor: pointer;
 }
 
-.avatar:hover {
-	opacity: 0.7;
-	background-image: url('../../assets/icons/avatar.png') !important;
+.animated {
+	animation: flap 240ms 1;
 }
 
-@media screen and (max-width: 40em) {
-    .avatar {
-			width: 70px;
-			height: 70px;
-    }
-    
+.clickable:hover {
+	opacity: 0.8;
+}
+
+@keyframes flap {
+	from {
+		transform: scale(0) ;
+		opacity: 0;
+	}
+
+	to {
+		transform: scale(1) ;
+		opacity: 1;
+	}
 }

@@ -1,4 +1,13 @@
-import { ERROR, USER_FETCHED, LOADING, USER_LOGIN, DISMISS_NOTIFICATION } from "../actions";
+import {
+	ERROR,
+	USER_FETCHED,
+	LOADING,
+	USER_LOGIN,
+	DISMISS_NOTIFICATION,
+	SCRAPE,
+	SCRAPED,
+	DISCARD_SCRAPED,
+} from "../actions";
 import { errorMessages } from "../../utils/defaults";
 
 export const loadingReducer = (state = false, action) => {
@@ -7,12 +16,14 @@ export const loadingReducer = (state = false, action) => {
 	switch (type) {
 		case USER_FETCHED:
 		case ERROR:
+		case SCRAPED:
 			state = false;
 			break;
 		case LOADING:
 			state = loading;
 			break;
 		case USER_LOGIN:
+		case SCRAPE:
 			state = true;
 			break;
 
@@ -65,6 +76,22 @@ export const notificationReducers = (state = { text: "", timer: 0 }, action) => 
 
 		default:
 		// not a thing
+	}
+
+	return state;
+};
+
+export const scrapedReducer = (state = {}, action) => {
+	const { scrapedData, type } = action;
+
+	switch (type) {
+		case SCRAPED:
+			state = scrapedData;
+			break;
+		case DISCARD_SCRAPED:
+			state = {};
+			break;
+		default:
 	}
 
 	return state;

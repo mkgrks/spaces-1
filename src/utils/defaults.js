@@ -1,4 +1,4 @@
-import { fetchThumbnails } from "../api/unsplash";
+// import { fetchThumbnails } from "../api/unsplash";
 
 export const errorMessages = e => {
 	switch (e) {
@@ -8,15 +8,17 @@ export const errorMessages = e => {
 			return "You have denied the permission to the scopes required. Sorry to see you go.";
 		case "immediate_failed":
 			return "No user could be automatically selected without prompting the consent flow!";
+		case "invalid_url":
+			return "Maybe invalid URL. Unable to fetch info.";
 		default:
 			return "Something went wrong!";
 	}
 };
 
-export const defaultBoards = [
-	{
-		id: 1,
-		name: "Group Interests",
-		descr: "Group your interests",
-	},
-];
+// export const defaultBoards = [
+// 	{
+// 		id: 1,
+// 		name: "Group Interests",
+// 		descr: "Group your interests",
+// 	},
+// ];

@@ -2,20 +2,18 @@ import React from "react";
 import styles from "./Card.css";
 
 const Card = props => {
-	const { thumbnail, title, description } = props;
+	const { color, title, description, size, id } = props;
 
 	return (
-		<article className={styles.card}>
-			<a href="#">
-				<picture className={styles.thumbnail}>
-					<img src={thumbnail} alt={title} />
-				</picture>
-				<div className={styles.cardContent}>
-					<h2>{title}</h2>
-					<p>{description}</p>
-				</div>
-			</a>
-		</article>
+		<div
+			className={[styles.card, styles[`${size}Card`]].join(" ")}
+			style={{ backgroundColor: color }}
+		>
+			<div className={styles.cardHeader}>{title}</div>
+			<div className={styles.cardMain}>
+				<p className={styles.mainDescription}>{description}</p>
+			</div>
+		</div>
 	);
 };
 

@@ -10,6 +10,5 @@ export const userLogin = authCode => {
 export const userLogout = () => {
 	return {
 		type: USER_LOGOUT,
-		user: {},
 	};
 };

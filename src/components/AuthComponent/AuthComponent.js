@@ -1,7 +1,9 @@
+// http://bit.ly/2M460rF
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import GoogleLogin from "./GoogleLogin/GoogleLogin";
-import UserBubble from "../UserBubble/UserBubble";
+import UserBubble from "./UserBubble/UserBubble";
+import { Avatar } from "..";
 import { userLogout } from "../../store/actions";
 
 import styles from "./AuthComponent.css";
@@ -41,11 +43,7 @@ class AuthComponent extends Component {
 			<div className={styles.authComponent}>
 				{email ? (
 					<div>
-						<div
-							style={{ backgroundImage: `url(${avatar}` }}
-							className={[styles.authButton, styles.avatar].join(" ")}
-							onClick={::this.handleBubble}
-						/>
+						<Avatar size="32px" handleClick={::this.handleBubble} clickable animated />
 						{showBubble ? (
 							<UserBubble
 								fullName={fullName}

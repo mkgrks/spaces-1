@@ -1,11 +1,11 @@
-import { FETCHED_SPACES, INITIALIZATION } from "../actions";
+import { SPACES_FETCHED } from "../actions";
 
-const spacesReducer = (state = false, action) => {
+const spacesReducer = (state = [], action) => {
 	const { spaces, type } = action;
+	// debugger; // eslint-disable-line
 
 	switch (type) {
-		case FETCHED_SPACES:
-		case INITIALIZATION:
+		case SPACES_FETCHED:
 			state = spaces;
 			break;
 
