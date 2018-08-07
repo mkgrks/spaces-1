@@ -1,4 +1,4 @@
-import { USER_LOGOUT, USER_LOGIN } from ".";
+import { USER_LOGOUT, USER_LOGIN, CREATE_SPACE } from ".";
 
 export const userLogin = authCode => {
 	return {
@@ -10,5 +10,14 @@ export const userLogin = authCode => {
 export const userLogout = () => {
 	return {
 		type: USER_LOGOUT,
+	};
+};
+
+export const createSpace = (name, description, isPublic) => {
+	return {
+		type: CREATE_SPACE,
+		name,
+		description,
+		isPublic,
 	};
 };

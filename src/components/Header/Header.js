@@ -9,16 +9,14 @@ class Header extends Component {
 		this.state = {
 			raised: false,
 		};
-
-		this.handleScroll = this.handleScroll.bind(this);
 	}
 
 	componentDidMount() {
-		window.addEventListener("scroll", this.handleScroll, { passive: true });
+		window.addEventListener("scroll", ::this.handleScroll, { passive: true });
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener("scroll", this.handleScroll);
+		window.removeEventListener("scroll", ::this.handleScroll);
 	}
 
 	handleScroll() {
@@ -33,7 +31,7 @@ class Header extends Component {
 
 	render() {
 		const { raised } = this.state;
-		const headerClasses = [styles.header, raised ? styles.shadow : ""].join(" ");
+		const headerClasses = [styles.header, raised && styles.shadow].join(" ");
 
 		return (
 			<header className={headerClasses}>

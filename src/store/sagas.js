@@ -11,16 +11,18 @@ import {
 	ERROR,
 	SCRAPED,
 	SCRAPE,
+	CREATE_SPACE,
+	SPACE_SAVED,
 } from "./actions";
 
 function* initialize() {
 	const user = getLocal("user");
-	// debugger; // eslint-disable-line
 
 	if (user) {
 		yield put({ type: USER_FETCHED, user });
 
 		try {
+			// maybe not a valid session.
 			const spaces = yield call(api.fetchUserSpaces);
 
 			if (spaces.error) throw spaces.error;
@@ -36,6 +38,7 @@ function* initialize() {
 	const init = yield call(api.handshake);
 
 	if (init.user) {
+		// with handshake, if already in session and not in local storage, set again!
 		setLocal("user", init.user);
 		yield put({ type: USER_FETCHED, user: init.user });
 		yield put({ type: SPACES_FETCHED, spaces: init.spaces });
@@ -44,10 +47,25 @@ function* initialize() {
 	}
 }
 
+function* createSpace(action) {
+	const { name, description, isPublic } = action;
+	const response = yield call(api.createSpace, name, description, isPublic);
+
+	const space = {
+		id: response.id,
+		size: response.size,
+		color: "#fff",
+		name,
+		descr: description,
+		public: isPublic,
+		// owner?
+	};
+
+	yield put({ type: SPACE_SAVED, space });
+}
+
 function* fetchSpaces() {
 	// const state = yield select();
-	// debugger; // eslint-disable-line
-
 	const spaces = yield call(api.fetchUserSpaces);
 	yield put({ type: SPACES_FETCHED, spaces });
 }
@@ -95,6 +113,7 @@ function* rootSaga() {
 	yield takeEvery(USER_LOGIN, userLogin);
 	yield takeEvery(USER_LOGOUT, userLogout);
 	yield takeEvery(SCRAPE, scrape);
+	yield takeEvery(CREATE_SPACE, createSpace);
 }
 
 export default rootSaga;

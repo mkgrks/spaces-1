@@ -7,6 +7,8 @@ import {
 	SCRAPE,
 	SCRAPED,
 	DISCARD_SCRAPED,
+	CREATE_SPACE,
+	SPACE_SAVED,
 } from "../actions";
 import { errorMessages } from "../../utils/defaults";
 
@@ -17,11 +19,13 @@ export const loadingReducer = (state = false, action) => {
 		case USER_FETCHED:
 		case ERROR:
 		case SCRAPED:
+		case SPACE_SAVED:
 			state = false;
 			break;
 		case LOADING:
 			state = loading;
 			break;
+		case CREATE_SPACE:
 		case USER_LOGIN:
 		case SCRAPE:
 			state = true;

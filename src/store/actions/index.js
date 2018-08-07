@@ -1,4 +1,4 @@
-import { userLogin, userLogout } from "./userActions";
+import { userLogin, userLogout, createSpace } from "./userActions";
 import { loader, dismissNotification, error, scrape, discardScraped } from "./utilsActions";
 
 export const USER_FETCHED = "USER_FETCHED";
@@ -13,5 +13,16 @@ export const DISMISS_NOTIFICATION = "DISMISS_NOTIFICATION";
 export const SCRAPE = "SCRAPE";
 export const SCRAPED = "SCRAPED";
 export const DISCARD_SCRAPED = "DISCARD_SCRAPED";
+export const CREATE_SPACE = "CREATE_SPACE";
+export const SPACE_SAVED = "SPACE_SAVED";
 
-export { loader, userLogout, userLogin, dismissNotification, error, scrape, discardScraped };
+export {
+	loader,
+	userLogout,
+	userLogin,
+	dismissNotification,
+	error,
+	scrape,
+	discardScraped,
+	createSpace,
+};

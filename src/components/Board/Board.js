@@ -5,7 +5,6 @@ import styles from "./Board.css";
 
 const Board = props => {
 	const { spaces } = props;
-	// debugger; // eslint-disable-line
 
 	return (
 		<div className={styles.container}>

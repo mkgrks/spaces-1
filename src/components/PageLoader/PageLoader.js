@@ -15,9 +15,9 @@ const PageLoader = props => {
 				/>
 			</div>
 		);
-	} else {
-		return "";
 	}
+
+	return "";
 };
 
 export default connect(state => ({ loading: state.loading }))(PageLoader);

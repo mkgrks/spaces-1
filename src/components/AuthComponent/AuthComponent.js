@@ -43,7 +43,7 @@ class AuthComponent extends Component {
 			<div className={styles.authComponent}>
 				{email ? (
 					<div>
-						<Avatar size="32px" handleClick={::this.handleBubble} clickable animated />
+						<Avatar size="32px" onClick={::this.handleBubble} clickable animated />
 						{showBubble ? (
 							<UserBubble
 								fullName={fullName}
